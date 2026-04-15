@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jeeson & Elizabath Wedding</title>
+
+<style>
+body {
+font-family: 'Georgia', serif;
+background: #f5f6f4;
+text-align: center;
+padding: 15px;
+color: #2c2c2c;
+}
+
+.card {
+max-width: 520px;
+margin: auto;
+background: white;
+padding: 22px;
+border-radius: 20px;
+box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+h1 {
+font-size: 26px;
+color: #6b7d6e;
+margin-bottom: 3px;
+}
+
+h2 {
+font-weight: normal;
+margin: 5px 0;
+}
+
+.date {
+margin-top: 15px;
+font-size: 17px;
+}
+
+.countdown {
+display: flex;
+justify-content: space-between;
+margin-top: 20px;
+}
+
+.box {
+background: #6b7d6e;
+color: white;
+padding: 12px 5px;
+border-radius: 12px;
+width: 23%;
+}
+
+.box h3 {
+margin: 0;
+font-size: 20px;
+}
+
+.section {
+margin-top: 25px;
+}
+
+.button {
+display: block;
+margin: 10px auto;
+padding: 12px;
+width: 85%;
+border-radius: 30px;
+text-decoration: none;
+font-size: 15px;
+}
+
+.map {
+background: #6b7d6e;
+color: white;
+}
+
+.rsvp {
+background: #2c2c2c;
+color: white;
+}
+
+.footer {
+margin-top: 20px;
+font-size: 14px;
+color: #666;
+}
+
+.image {
+width: 100%;
+border-radius: 15px;
+margin-bottom: 15px;
+}
+
+.engagement {
+background: #f7f7f7;
+padding: 15px;
+border-radius: 15px;
+margin-top: 20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<img class="image" src="https://images.unsplash.com/photo-1519741497674-611481863552" />
+
+<h1>Jeeson K James</h1>
+<h2>❤</h2>
+<h1>Elizabeth Liza Mathew</h1>
+
+<div class="date">
+Saturday, 23 May 2026<br>
+11:00 AM<br>
+Sacred Heart Church, Chethipuzha
+</div>
+
+<div class="countdown">
+<div class="box">
+<h3 id="days">0</h3>
+<p>Days</p>
+</div>
+
+<div class="box">
+<h3 id="hours">0</h3>
+<p>Hours</p>
+</div>
+
+<div class="box">
+<h3 id="minutes">0</h3>
+<p>Minutes</p>
+</div>
+
+<div class="box">
+<h3 id="seconds">0</h3>
+<p>Seconds</p>
+</div>
+</div>
+
+<div class="section">
+<a class="button map" href="https://maps.google.com/?q=Sacred Heart Church Chethipuzha" target="_blank">
+📍 View Location
+</a>
+
+<a class="button rsvp" href="https://wa.me/9747503147">
+💬 RSVP on WhatsApp
+</a>
+</div>
+
+<div class="engagement">
+<h3>Engagement</h3>
+Thursday, 21 May 2026<br>
+St. Teresa's Roman Catholic Church, Pakkil<br>
+11:30 AM
+</div>
+
+<div class="footer">
+We joyfully invite you to celebrate our wedding 💍
+</div>
+
+</div>
+
+<script>
+var weddingDate = new Date("May 23, 2026 11:00:00").getTime();
+
+var x = setInterval(function() {
+
+var now = new Date().getTime();
+var distance = weddingDate - now;
+
+var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+
+document.getElementById("days").innerHTML = days;
+document.getElementById("hours").innerHTML = hours;
+document.getElementById("minutes").innerHTML = minutes;
+document.getElementById("seconds").innerHTML = seconds;
+
+if (distance < 0) {
+clearInterval(x);
+document.querySelector(".countdown").innerHTML = "Wedding Day 🎉";
+}
+
+}, 1000);
+</script>
+
+</body>
+</html>
