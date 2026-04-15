@@ -117,10 +117,36 @@ background: #8a9b8c;
 color: white;
 }
 
+
+
+.popper {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+pointer-events: none;
+overflow: hidden;
+}
+
+.confetti {
+position: absolute;
+width: 8px;
+height: 8px;
+background: #6b7d6e;
+animation: fall 3s linear infinite;
+}
+
+@keyframes fall {
+0% {transform: translateY(-10px) rotate(0deg);} 
+100% {transform: translateY(100vh) rotate(360deg);} 
+}
+
 </style>
 </head>
 
 <body>
+<div class="popper" id="popper"></div>
 
 <div class="card fade-in">
 
@@ -163,7 +189,7 @@ Sacred Heart Church, Chethipuzha
 📍 View Location
 </a>
 
-<a class="button rsvp" href="https://wa.me/9747503147">
+<a class="button rsvp" href="https://wa.me/91XXXXXXXXXX">
 💬 RSVP on WhatsApp
 </a>
 </div>
@@ -180,6 +206,7 @@ St. Teresa's Roman Catholic Church, Pakkil<br>
 📅 Save to Google Calendar
 </a>
 </div>
+
 
 <div class="footer">
 We joyfully invite you to celebrate our wedding 💍
@@ -212,6 +239,28 @@ document.querySelector(".countdown").innerHTML = "Wedding Day 🎉";
 }
 
 }, 1000);
+
+
+function createConfetti() {
+var popper = document.getElementById('popper');
+for (var i = 0; i < 30; i++) {
+var confetti = document.createElement('div');
+confetti.classList.add('confetti');
+confetti.style.left = Math.random() * 100 + 'vw';
+confetti.style.animationDuration = (Math.random() * 2 + 2) + 's';
+popper.appendChild(confetti);
+
+setTimeout(() => {
+confetti.remove();
+}, 3000);
+}
+}
+
+window.onload = function() {
+createConfetti();
+setInterval(createConfetti, 8000);
+}
+
 </script>
 
 </body>
