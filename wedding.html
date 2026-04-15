@@ -101,14 +101,30 @@ border-radius: 15px;
 margin-top: 20px;
 }
 
+
+
+.fade-in {
+animation: fadeIn 1.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+from {opacity:0; transform: translateY(15px);} 
+to {opacity:1; transform: translateY(0);} 
+}
+
+.calendar {
+background: #8a9b8c;
+color: white;
+}
+
 </style>
 </head>
 
 <body>
 
-<div class="card">
+<div class="card fade-in">
 
-<img class="image" src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=1200&auto=format&fit=crop" />
+<img class="image" src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=1200&auto=format&fit=crop" alt="Wedding Invitation" />
 
 <h1>Jeeson K James</h1>
 <h2>❤</h2>
@@ -157,6 +173,19 @@ Sacred Heart Church, Chethipuzha
 Thursday, 21 May 2026<br>
 St. Teresa's Roman Catholic Church, Pakkil<br>
 11:30 AM
+</div>
+
+<div class="section">
+<a class="button calendar" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Jeeson+%26+Elizabeth+Wedding&dates=20260523T053000Z/20260523T083000Z&details=Wedding+Ceremony&location=Sacred+Heart+Church+Chethipuzha" target="_blank">
+📅 Save to Google Calendar
+</a>
+</div>
+
+<div class="engagement">
+<h3>Reception</h3>
+Saturday, 23 May 2026<br>
+01:30 PM Onwards<br>
+Reception Venue: Changanassery (Details on Invitation)
 </div>
 
 <div class="footer">
