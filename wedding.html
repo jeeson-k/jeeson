@@ -117,86 +117,18 @@ background: #8a9b8c;
 color: white;
 }
 
-
-
-.popper {
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-pointer-events: none;
-overflow: hidden;
-}
-
-.confetti {
-position: absolute;
-width: 8px;
-height: 8px;
-background: #6b7d6e;
-animation: fall 3s linear infinite;
-}
-
-@keyframes fall {
-0% {transform: translateY(-10px) rotate(0deg);} 
-100% {transform: translateY(100vh) rotate(360deg);} 
-}
-
-
-
-.firework {
-position: fixed;
-width: 5px;
-height: 5px;
-background: #6b7d6e;
-border-radius: 50%;
-animation: explode 1s ease-out forwards;
-}
-
-@keyframes explode {
-0% {transform: scale(1); opacity:1;}
-100% {transform: scale(8); opacity:0;}
-}
-
-.pulse {
-animation: pulse 1.5s infinite;
-}
-
-@keyframes pulse {
-0% {transform: scale(1);} 
-50% {transform: scale(1.05);} 
-100% {transform: scale(1);} 
-}
-
-.typing {
-overflow: hidden;
-white-space: nowrap;
-border-right: 2px solid #6b7d6e;
-animation: typing 3s steps(30,end), blink .8s infinite;
-}
-
-@keyframes typing {
-from {width:0}
-to {width:100%}
-}
-
-@keyframes blink {
-50% {border-color: transparent}
-}
-
 </style>
 </head>
 
 <body>
-<div class="popper" id="popper"></div>
 
 <div class="card fade-in">
 
 <img class="image" src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=1200&auto=format&fit=crop" alt="Wedding Invitation" />
 
-<h1 class="typing">Jeeson K James</h1>
+<h1>Jeeson K James</h1>
 <h2>❤</h2>
-<h1 class="typing">Elizabath Liza Mathew</h1>
+<h1>Elizabath Liza Mathew</h1>
 
 <div class="date">
 Saturday, 23 May 2026<br>
@@ -204,7 +136,6 @@ Saturday, 23 May 2026<br>
 Sacred Heart Church, Chethipuzha
 </div>
 
-<h3 class="pulse">Countdown to Our Wedding 💍</h3>
 <div class="countdown">
 <div class="box">
 <h3 id="days">0</h3>
@@ -250,7 +181,6 @@ St. Teresa's Roman Catholic Church, Pakkil<br>
 </a>
 </div>
 
-
 <div class="footer">
 We joyfully invite you to celebrate our wedding 💍
 </div>
@@ -282,38 +212,6 @@ document.querySelector(".countdown").innerHTML = "Wedding Day 🎉";
 }
 
 }, 1000);
-
-
-function createConfetti() {
-var popper = document.getElementById('popper');
-for (var i = 0; i < 30; i++) {
-var confetti = document.createElement('div');
-confetti.classList.add('confetti');
-confetti.style.left = Math.random() * 100 + 'vw';
-confetti.style.animationDuration = (Math.random() * 2 + 2) + 's';
-popper.appendChild(confetti);
-
-setTimeout(() => {
-confetti.remove();
-}, 3000);
-}
-}
-
-function firework() {
-var fw = document.createElement('div');
-fw.classList.add('firework');
-fw.style.top = Math.random()*100+'vh';
-fw.style.left = Math.random()*100+'vw';
-document.body.appendChild(fw);
-setTimeout(()=>fw.remove(),1000);
-}
-
-window.onload = function() {
-createConfetti();
-setInterval(createConfetti, 8000);
-setInterval(firework, 3000);
-}
-
 </script>
 
 </body>
