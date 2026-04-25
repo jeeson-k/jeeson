@@ -7,124 +7,139 @@
 
 <style>
 body {
-font-family: 'Georgia', serif;
-background: #f5f6f4;
-text-align: center;
-padding: 15px;
-color: #2c2c2c;
+  font-family: 'Georgia', serif;
+  background: linear-gradient(to bottom, #f8f8f6, #eef0ec);
+  text-align: center;
+  padding: 15px;
+  color: #2c2c2c;
 }
 
 .card {
-max-width: 520px;
-margin: auto;
-background: white;
-padding: 22px;
-border-radius: 20px;
-box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  max-width: 520px;
+  margin: auto;
+  background: white;
+  padding: 26px;
+  border-radius: 22px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+  border: 1px solid #eee;
 }
 
 h1 {
-font-size: 26px;
-color: #6b7d6e;
-margin-bottom: 3px;
+  font-size: 28px;
+  color: #5f6f61;
+  margin-bottom: 4px;
 }
 
 h2 {
-font-weight: normal;
-margin: 5px 0;
+  font-weight: normal;
+  margin: 6px 0;
+  font-size: 18px;
+  color: #999;
 }
 
 .date {
-margin-top: 15px;
-font-size: 17px;
+  margin-top: 18px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
 }
 
 .countdown {
-display: flex;
-justify-content: space-between;
-margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+  gap: 8px;
 }
 
 .box {
-background: #6b7d6e;
-color: white;
-padding: 12px 5px;
-border-radius: 12px;
-width: 23%;
+  flex: 1;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 12px 5px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  perspective: 600px;
 }
 
 .box h3 {
-margin: 0;
-font-size: 20px;
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+  color: #4e5d50;
+  transition: transform 0.4s ease;
+}
+
+.flip {
+  transform: rotateX(360deg);
+}
+
+.box p {
+  margin-top: 5px;
+  font-size: 12px;
+  color: #777;
+  letter-spacing: 1px;
 }
 
 .section {
-margin-top: 25px;
+  margin-top: 28px;
 }
 
 .button {
-display: block;
-margin: 10px auto;
-padding: 12px;
-width: 85%;
-border-radius: 30px;
-text-decoration: none;
-font-size: 15px;
+  display: block;
+  margin: 10px auto;
+  padding: 13px;
+  width: 85%;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.button:hover {
+  transform: scale(1.03);
 }
 
 .map {
-background: #6b7d6e;
-color: white;
+  background: linear-gradient(135deg, #6b7d6e, #889b8c);
+  color: white;
 }
 
 .rsvp {
-background: #2c2c2c;
-color: white;
-}
-
-.footer {
-margin-top: 20px;
-font-size: 14px;
-color: #666;
-}
-
-.image {
-width: 100%;
-border-radius: 15px;
-margin-bottom: 15px;
+  background: #2c2c2c;
+  color: white;
 }
 
 .engagement {
-background: #f7f7f7;
-padding: 15px;
-border-radius: 15px;
-margin-top: 20px;
+  background: #f9f9f7;
+  padding: 16px;
+  border-radius: 16px;
+  margin-top: 22px;
+  border: 1px solid #eee;
 }
 
-
-
-.fade-in {
-animation: fadeIn 1.2s ease-in-out;
+.footer {
+  margin-top: 22px;
+  font-size: 14px;
+  color: #777;
+  font-style: italic;
 }
 
-@keyframes fadeIn {
-from {opacity:0; transform: translateY(15px);} 
-to {opacity:1; transform: translateY(0);} 
+.image {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin-bottom: 18px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
-
-.calendar {
-background: #8a9b8c;
-color: white;
-}
-
 </style>
 </head>
 
 <body>
 
-<div class="card fade-in">
+<div class="card">
 
-<img class="image" src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=1200&auto=format&fit=crop" alt="Wedding Invitation" />
+<img class="image" src="https://images.pexels.com/photos/169190/pexels-photo-169190.jpeg" />
 
 <h1>Jeeson K James</h1>
 <h2>❤</h2>
@@ -136,26 +151,12 @@ Saturday, 23 May 2026<br>
 Sacred Heart Church, Chethipuzha
 </div>
 
+
 <div class="countdown">
-<div class="box">
-<h3 id="days">0</h3>
-<p>Days</p>
-</div>
-
-<div class="box">
-<h3 id="hours">0</h3>
-<p>Hours</p>
-</div>
-
-<div class="box">
-<h3 id="minutes">0</h3>
-<p>Minutes</p>
-</div>
-
-<div class="box">
-<h3 id="seconds">0</h3>
-<p>Seconds</p>
-</div>
+  <div class="box"><h3 id="days">00</h3><p>Days</p></div>
+  <div class="box"><h3 id="hours">00</h3><p>Hours</p></div>
+  <div class="box"><h3 id="minutes">00</h3><p>Minutes</p></div>
+  <div class="box"><h3 id="seconds">00</h3><p>Seconds</p></div>
 </div>
 
 <div class="section">
@@ -175,12 +176,6 @@ St. Teresa's Roman Catholic Church, Pakkil<br>
 11:30 AM
 </div>
 
-<div class="section">
-<a class="button calendar" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Jeeson+%26+Elizabeth+Wedding&dates=20260523T053000Z/20260523T083000Z&details=Wedding+Ceremony&location=Sacred+Heart+Church+Chethipuzha" target="_blank">
-📅 Save to Google Calendar
-</a>
-</div>
-
 <div class="footer">
 We joyfully invite you to celebrate our wedding 💍
 </div>
@@ -190,7 +185,18 @@ We joyfully invite you to celebrate our wedding 💍
 <script>
 var weddingDate = new Date("May 23, 2026 11:00:00").getTime();
 
-var x = setInterval(function() {
+function updateWithFlip(id, newValue) {
+  const el = document.getElementById(id);
+  if (el.innerHTML != newValue) {
+    el.classList.add("flip");
+    setTimeout(() => {
+      el.innerHTML = newValue;
+      el.classList.remove("flip");
+    }, 200);
+  }
+}
+
+setInterval(function() {
 
 var now = new Date().getTime();
 var distance = weddingDate - now;
@@ -200,15 +206,13 @@ var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-
-document.getElementById("days").innerHTML = days;
-document.getElementById("hours").innerHTML = hours;
-document.getElementById("minutes").innerHTML = minutes;
-document.getElementById("seconds").innerHTML = seconds;
+updateWithFlip("days", String(days).padStart(2, '0'));
+updateWithFlip("hours", String(hours).padStart(2, '0'));
+updateWithFlip("minutes", String(minutes).padStart(2, '0'));
+updateWithFlip("seconds", String(seconds).padStart(2, '0'));
 
 if (distance < 0) {
-clearInterval(x);
-document.querySelector(".countdown").innerHTML = "Wedding Day 🎉";
+  document.querySelector(".countdown").innerHTML = "Wedding Day 🎉";
 }
 
 }, 1000);
